@@ -5,6 +5,7 @@ product_list = wb["Sheet1"]
 
 suppliersSUM = {}
 lowInventory = {}
+totalValue = {}
 
 AAAProducts = 0
 BBBProducts = 0
@@ -20,6 +21,7 @@ for product_row in range(2, product_list.max_row + 1):
 
     if supplier_name == "AAA Company":
         AAAProducts+=1
+        totalValue["AAA Company"]+=price
     if supplier_name == "BBB Company":
         BBBProducts+=1
     if supplier_name == "CCC Company":
@@ -29,7 +31,10 @@ for product_row in range(2, product_list.max_row + 1):
     if inventory < 10:
         lowInventory[product] = inventory
 
+
         
 suppliersSUM = {"AAA": AAAProducts,  "BBB": BBBProducts , "CCC": CCCProducts}
 print(suppliersSUM)
 print(lowInventory)
+
+test
